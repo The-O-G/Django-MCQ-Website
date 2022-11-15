@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .main-heading {
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .main-text {
+            margin-top: 5px;
+            text-align: center, justify;
+            white-space: break-spaces;
+            overflow-y: scroll;
+            display: block;
+        }
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(222, 219, 215);
+            text-align: center;
+        }
+        .child {
+            position: absolute;
+            top: 25%;
+            left: 32.5%;
+            /* background-color: #DBF9FC; */
+            height:50%;
+            width:35%;
+        }
+        .options {
+            border-style: solid;
+            border-color: #e01949;
+            width: 75%;
+            margin: 0 auto;
+            padding: 10px;
+            position: relative;
+        }
+        .main-wrapper {
+            z-index: 10;
+            border-image-source: url(https://credenz.in/static/media/square_red.8d3e1c6d.png);
+            border-image-slice: 20;
+            border-image-width: 10;
+            border-image-outset: 1;
+            border-style: solid;
+            border-image-repeat: round;
+            transition: box-shadow .3s;
+            margin: 0;
+            position: relative;
+            padding: 2.5rem 2.5rem 2.7rem;
+            height:auto;
+        }
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #555;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+          }
+          
+          input[type=text]:focus {
+            border: 3px solid #e01949;
+          }
+
+    </style>
+</head>
+<body style="background-color: rgb(28, 30, 31)">
+{{message}}
+<div class="child">
+    
+	<div class="main-wrapper">
+        <form action="./login" method="post" id="frm1">
+            {% csrf_token %}
+              <div style="padding-left: 30px;padding-top: 0%;">
+                <input type="text" class="form-control,col-xs-3" style="color: rgb(2, 2, 2);" placeholder="Enter username" name="Userid" required>
+              <br><br>
+              <input type="text" class="form-control,col-xs-3" style="color: rgb(2, 2, 2);" placeholder="Enter Password" name="psw" id="psw" style="-webkit-text-security: disc;" required>
+          <br><br>
+          <button type="submit" style="background-color:rgb(28, 30, 31);width:100%;border:none"><div class="options">Login</div></button><br><br>
+        </form>
+        <a href='./checklogin' style="text-decoration: none;">
+            <div class="options">Register!</div>
+        </a>
+        {% comment %} <br>
+    	<a href='./login' style="text-decoration: none;">
+            <div class="options">Login</div>
+        </a> {% endcomment %}
+    </div>
+</div>
+
+</body>
+</html>

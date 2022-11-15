@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Formv2</title>
+</head>
+<body style='background-color: darkgrey'>
+  <P id="test" style="color: blue;"></P>
+    <h1>Registeration Form:</h1>
+  <div class="d-flex justify-content-center" style="padding: 10px;">
+    <form action="/registration" method="post" id="frm1">
+      {% csrf_token %}
+        <div style="padding-left: 30px;padding-top: 0%;">
+          <b> User Name: </b><input type="text" class="form-control,col-xs-3" placeholder="Enter username" name="Userid" required>
+        <br><br>
+        <b>Enter First Name: </b><input type="text" class="form-control,col-xs-3" placeholder="enter first name" name="fname" required>
+        <br><br>
+        <b>Enter Last Name: </b><input type="text" class="form-control,col-xs-3" placeholder="Enter Last Name" name="lname" required>
+        <br><br>
+        <b>Enter Email ID: </b><input type="email"class="form-control,col-xs-3" placeholder="Enter email id" name="email" required>
+        <br><br>
+        <b>Enter Phone number: </b><input type="number"class="form-control,col-xs-3" placeholder="Phone number" name="phone" required>
+        <br><br>
+        </div>
+        <h3>Gender</h3>
+        <div style="padding-left: 30px;padding-top: 0%;">
+          <b>Male: </b><input type="radio" name="Male"><br>
+          <b>Female: </b><input type="radio" name="Female"><br>
+          <b>Prefer not to say: </b><input type="radio" name="None"><br><br>
+          <b>Enter Password: </b><input type="text" class="form-control,col-xs-3" placeholder="Enter Password" name="psw" id="psw" style="-webkit-text-security: disc;" required>
+          <br><br>
+          <b>Please Repeat Password: </b><input type="text" class="form-control,col-xs-3" placeholder="Repeat Password" name="rpsw" id="rpsw" style="-webkit-text-security: disc;" required>
+          <br><br>
+        </div>
+
+<textarea name="Comments" placeholder="Comments" style="width: 380px; height: 73px;"></textarea>
+        <br><br>
+        <button type="submit">Register</button><br><br>
+      </form>
+      <input type="button" onclick="myFunction()" class="form-check-input" value="check">
+      <br><br>
+      <b>Already a user?</b><a href="/">Log In</a>
+    </div>
+
+      <script>
+        function check_form() {
+          var x = document.getElementsByName('fname');
+          document.getElementById("demo").innerHTML = x;
+        }
+        function myFunction() {
+            var name = document.getElementById("frm1").elements[0].value;
+            var fname = document.getElementById("frm1").elements[1].value;
+            var lname = document.getElementById("frm1").elements[2].value;
+            var email = document.getElementById("frm1").elements[3].value;
+            var phone = document.getElementById("frm1").elements[4].value;
+            var psw = document.getElementById("psw").value;
+            var rpsw = document.getElementById("rpsw").value;
+            var error = "";
+            if(name) {
+              error+="";
+            }
+            else{
+              error+="Please enter name";
+            }
+            if(phone<99999999){
+                error+="Phone number must atleast be 8 digits<br>";
+            }
+            if(psw!=rpsw){
+              error+="Passwords dont match";
+            }
+            document.getElementById("test").innerHTML = error;
+            alert(error);
+        }
+        
+        </script>
+</body>
+</html>

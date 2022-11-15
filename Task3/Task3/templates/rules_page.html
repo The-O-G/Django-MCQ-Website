@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-wrapper {
+    z-index: 10;
+    border-image-source: url(https://credenz.in/static/media/square_red.8d3e1c6d.png);
+    border-image-slice: 20;
+    border-image-width: 10;
+    border-image-outset: 1;
+    border-style: solid;
+    border-image-repeat: round;
+    transition: box-shadow .3s;
+    margin: 0;
+    position: relative;
+    padding: 2.5rem 2.5rem 2.7rem;
+    height: 310px;
+}
+.main-heading {
+    color: var(--darkreader-text--light);
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    height: 15%;
+    
+}
+.main-text {
+    /* overflow-y: scroll; */
+    height: 85%;
+    margin-top: 5px;
+    text-align: center,justify;
+    white-space: break-spaces;
+    overflow-y: scroll;
+    display:block;
+}
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--bs-body-font-size);
+    line-height: var(--bs-body-line-height);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    color: rgb(222, 219, 215);
+    text-align: center;
+
+}
+
+.div-text {
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    background: #2d2e31;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+.div-text::after {
+    border: #e01949;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+    background: linear-gradient(270deg, #e01949, #00acee);
+    opacity: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .cl-button {
+    order: 2;
+    align-self: center;
+    height: 80%;
+    width: 60%;
+    border: 10px;
+    border-color: #e01949;
+    background-color: transparent;
+    font-size: 16px;
+    margin-left: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+  }
+
+
+.div-text:hover::after{
+      opacity: 1;
+  }
+  #text_button{
+    margin: auto;
+    
+  }
+  .container {
+  font-family: arial;
+  font-size: 24px;
+  margin: 25px;
+  width: 350px;
+  height: 200px;
+  position: relative;
+}
+
+.child {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+}
+    </style>
+</head>
+<body style="background-color: rgb(28, 30, 31)">
+    <div class="main-wrapper">
+        <div class="main-heading">Clash</div><div class="main-text">
+            1. A maximum of 2 participants (in a team) pursuing an undergraduate program at their institution are allowed to participate
+
+            2. Each participant, if in a team, must pay the given amount individually to play the event as a team.
+        
+            3. The participants must keep their college verification handy as they may be asked to disclose it at any point of time. Before the final round, all participants will be asked to verify their identity as an undergraduate student. Failure to do so will lead to immediate disqualification.
+        
+            4. Marking scheme along with further rules and regulation while playing Clash will be released during the time of the event itself.
+        </div>
+    </div>
+    <br><br>
+        <a href="/questions" style="text-decoration: none;">
+            <div style="width: 200px; height: 40px;text-align: center;" class="container, cl-button, div-text" id="text_button">
+                    Begin!!
+            </div>
+        </a>
+</body>
+</html>
